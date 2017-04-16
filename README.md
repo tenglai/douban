@@ -1,4 +1,5 @@
 # douban
+<<<<<<< HEAD
 
 > A Vue.js project
 
@@ -28,3 +29,6 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+vuee2.0 project for a demo
+>>>>>>> 20f8f173341b64d07c7394310b4bdf276390ab39
