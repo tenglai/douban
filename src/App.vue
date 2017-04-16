@@ -1,17 +1,44 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <div>
+    <v-header></v-header>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import vHeader from './components/header'
+import Hello from './components/Hello'
+import Index from './views/index'
+import VuexDemo from './views/vuex-demo'
+import Movies from './views/movies'
+import MovieList from './views/movie-list.vue'
+import MovieDetail from './views/movie-detail'
+import SearchList from './views/search-list.vue'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    vHeader,
+    Hello,
+    Index,
+    VuexDemo,
+    Movies,
+    MovieList,
+    MovieDetail,
+    SearchList
+  }
 }
 </script>
 
 <style>
+@import "assets/style"
+@import "assets/list"
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
