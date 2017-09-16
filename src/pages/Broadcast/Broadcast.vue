@@ -11,7 +11,7 @@
   import mHeader from '../../components/header'
 
   export default {
-    name: 'mine',
+    name: 'broadcast',
     components: {
       mHeader
     }
