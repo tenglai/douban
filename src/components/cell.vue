@@ -33,7 +33,6 @@
       }
     }
   }
-
 </script>
 <style lang="less">
   .m-cell {

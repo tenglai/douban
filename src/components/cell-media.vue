@@ -24,7 +24,6 @@
   export default {
     props: ['author', 'column', 'img']
   }
-
 </script>
 <style lang="less">
   .m-cell-media-wrap {
@@ -89,5 +88,4 @@
       }
     }
   }
-
 </style>
