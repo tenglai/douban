@@ -17,3 +17,13 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+// document.addEventListener('deviceready', function() {
+//   new Vue({
+//     el: '#app',
+//     router,
+//     template: '<App/>',
+//     components: { App }
+//   })
+//   window.navigator.splashscreen.hide()
+// }, false);
