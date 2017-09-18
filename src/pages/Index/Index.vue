@@ -7,9 +7,9 @@
         <span class="placeholder">影视 图书 唱片 小组 舞台剧等</span>
         <img src="../../assets/images/ic_scan_gray.png" alt="">
       </div>
-      <!-- <div class="m-header-button is-right" style="text-align: center;width: 50px;">
+      <div class="m-header-button is-right" style="text-align: center;width: 50px;">
         <a href="javascript:;"><img class="m-icon-img" src="../../assets/images/ic_chat_white.png" /></a>
-      </div> -->
+      </div>
     </header>
     <!-- 主体 -->
     <div class="page-content">
@@ -30,7 +30,7 @@
       <!--热门-->
       <div class="hot-wrap">
         <m-cell title="热门" label="hot">
-          <!--<a href="javascript:;" slot="cell-right">更多<img src="../../assets/images/ic_arrow_gray_small.png" alt=""></a>-->
+          <a href="javascript:;" slot="cell-right">更多<img src="../../assets/images/ic_arrow_gray_small.png" alt=""></a>
         </m-cell>
         <m-cell-media :author="item.target.author.name" :column="item.source_cn" :img="item.target.cover_url" v-for="(item,index) in hotData"
           :key="item.id">
@@ -41,13 +41,13 @@
       </div>
 
       <!--推荐-->
-      <!-- <div class="recommend-wrap">
+      <div class="recommend-wrap">
         <m-cell title="推荐" label="recommend"></m-cell>
         <m-cell-media  :author="item.target.author.name" :column="item.source_cn" :bg="item.target.cover_url" v-for="(item,index) in recommendData" :key="item.id">
           <span slot="title">{{item.title}}</span>
           <span slot="describe">{{item.target.desc}}</span>
         </m-cell-media>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
