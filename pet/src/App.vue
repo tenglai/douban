@@ -1,13 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <headBar/>
     <router-view/>
+    <diaLoger ref='diaLog' />
   </div>
 </template>
 
 <script>
+import HeadBar from './components/HeadBar'
+import DiaLog from './components/DiaLog'
 export default {
-  name: 'app'
+  name: 'app',
+  components:{
+    headBar:HeadBar,
+    diaLoger:DiaLog
+  }
 }
 </script>
 
@@ -18,6 +25,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 3px;
 }
 </style>
