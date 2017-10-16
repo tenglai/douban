@@ -4,7 +4,7 @@
  */
 import { normalTime } from './normalTime'
 
-// webpack 2中不允许混用import和module.exports
+// webpack2 中不允许混用import和module.exports
 // module.exports = {
 // 	normalTime
 // };

@@ -14,6 +14,7 @@
 	    </div>
     </div>
 </template>
+
 <style scoped>
 	.zns-loading{
 		position: fixed;
