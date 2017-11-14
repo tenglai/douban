@@ -1,7 +1,7 @@
 {
   "name": "vue2-vux",
   "version": "1.0.0",
-  "description": "a new project for vux",
+  "description": "A Vue.js project",
   "author": "tenglai <13049322087@163.com>",
   "private": true,
   "scripts": {
