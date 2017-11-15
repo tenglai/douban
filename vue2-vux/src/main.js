@@ -5,6 +5,8 @@ import App from './App'
 
 // 自定义的路由文件
 import router from './router/memberRouter.js'
+// 引入全局公共css
+import './assets/css/base.css'
 
 Vue.use(VueRouter)
 

@@ -17,7 +17,7 @@ const router = new VueRouter({
   // 路由映射map
   routes: [
     {
-      path: '/memberHome',
+      path: '/',
       name: 'memberHome',
       component: memberHome,
       children: [

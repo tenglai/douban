@@ -5,15 +5,15 @@
     <view-box ref="viewbox" body-padding-top="46px">
       <div class="vux-demo-header-box" slot="header">
         <!-- XHeader组件 -->
-        <x-header :left-options="{backText:''}" v-show="headShow">{{pageTitle}}</x-header>
+        <x-header :left-options="{backText:''}">{{pageTitle}}</x-header>
         <!-- Loading组件 -->
         <div v-transfer-dom class="loading-box">
-          <loading :show="loading" position="absolute"></loading>
+          <loading position="absolute"></loading>
         </div>
         <!-- 路由视图 -->
         <router-view></router-view>
         <!-- Tabbar组件 -->
-        <tabbar v-show="footerShow">
+        <tabbar>
           <tabbar-item selected link="/memberHome/newsIndex">
             <!-- Icon组件 -->
             <img slot="icon" src="../assets/img/icons/news_icon.png">
@@ -50,7 +50,7 @@
     name: 'memberHome',
     data(){
       let data = {
-        //
+        pageTitle:'首页'
       }
       return data
     },
