@@ -1,15 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+// 首页
+import Home from '../pages/Home/Home'
 
 Vue.use(Router)
 
+// 路由配置
 export default new Router({
   routes: [
+    // 首页
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/home',
+      redirect: '/'
+    },
+    {
+      path: '*',
+      redirect: '/'
+    },
   ]
 })
