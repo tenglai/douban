@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 首页
-import Home from '../pages/Home/Home'
+import Home from '@/pages/Home/Home'
+// 我的设置
+import MySettings from '@/pages/MySettings/MySettings'
 
 Vue.use(Router)
 
@@ -13,6 +15,12 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    // 我的设置
+    {
+      path: '/mySettings',
+      name: 'MySettings',
+      component: MySettings
     },
     {
       path: '/home',
