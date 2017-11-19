@@ -5,9 +5,9 @@
     <swiper :list="imgs" auto style="width:100%;height:120px;margin:0 auto;" dots-class="custom-bottom" dots-position="center"></swiper>
     <!-- 滚动列表 -->
     <div>
-      <scroller lock-x scrollbar-y height="250px" :bounce=false :scrollbarY="false" ref="scroller">
+      <scroller lock-x scrollbar-y height="350px" :bounce=false :scrollbarY="false" ref="scroller">
         <div class="news-wrap-list">
-          <cell v-for="x in Objlist" :title="x.title" :link="{path:'/newsDetail',query:{id:x.id,tag:'资讯'}}" :inline-desc="x.body" :key="item.id">
+          <cell v-for="x in Objlist" :title="x.title" :link="{path:'/newsDetail',query:{id:x.id,tag:'资讯'}}" :inline-desc="x.body" :key="x.id">
             <img class="ic_img" slot="icon" src="../../assets/img/ic_label_today.png">
             <div>
               <span class="pubdate">{{x.pub_date}}</span>
@@ -63,32 +63,33 @@
       async getList(){
         // 获取列表数据
         let data = await getList(this.pageIndex, this.catalog);
+        console.log(data);
         // 获取资讯列表数据
-        var news_list = data.result.items;
+        var news_list = data.obj_list;
         // 判断是否还有数据
         if(news_list.length > 0){
           this.ishow = true;
           for(var i=0;i<news_list.length;i++){
-            var time = news_list[i].pubDate;
+            var time = news_list[i].pub_date;
             // 修改日期显示格式
             var bngDate = new Date(time.replace(/-/g,"/"));
             var endDate = new Date();
             var minutes = (endDate.getTime() - bngDate.getTime())/60/1000;
 
-            // 时间段 判断pubDate显示内容
+            // 时间段 判断pub_date显示内容
             if(minutes >= 60){
               minutes = minutes/60;
               var dateTime = parseInt(minutes);
               if(dateTime >= 48){
-                news_list[i].pubDate = "2天前";
+                news_list[i].pub_date = "2天前";
               }else if(dateTime >= 24){
-                news_list[i].pubDate = "昨天";
+                news_list[i].pub_date = "昨天";
               }else{
-                news_list[i].pubDate = dateTime + "小时以前";
+                news_list[i].pub_date = dateTime + "小时以前";
               }
             }else{
               var minute = parseInt(minutes);
-              news_list[i].pubDate = minute + "分钟以前";
+              news_list[i].pub_date = minute + "分钟以前";
             }
 
             news_list[i].title = "  " + news_list[i].title;

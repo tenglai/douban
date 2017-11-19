@@ -7,9 +7,10 @@ const host_addr='http://192.168.1.110:8081/'
 
 /**
  * 获取资讯列表
+ * 解决跨域问题: 用 '/api' 代替 host_addr
  */
 export let getList = async (page, tag) => {
-  let response = await fetch(host_addr + `news_list?pageIndex=${page}&pageSize=20&catalog=${tag}`, {
+  let response = await fetch('/api' + `news_list?pageIndex=${page}&pageSize=20&catalog=${tag}`, {
     method: 'GET',
     mode: 'cors'
   }).catch((error) => {
@@ -24,7 +25,7 @@ export let getList = async (page, tag) => {
  * 获取资讯详情
  */
 export let getNewsDetail = async (id) => {
-  let response = await fetch(host_addr + `news_detail?id=${id}`, {
+  let response = await fetch('/api' + `news_detail?id=${id}`, {
     method: 'GET',
     mode: 'cors'
   }).catch((error) => {

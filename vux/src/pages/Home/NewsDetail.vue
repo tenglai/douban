@@ -3,11 +3,10 @@
   <div>
     <tabbar class="tabbar">
       <div class="title">{{title}}</div>
-      <tabbar-item class="search">
-      </tabbar-item>
+      <tabbar-item class="search"></tabbar-item>
     </tabbar>
     <h3 class="htitle">{{result.title}}</h3>
-    <scroller  lock-x scrollbar-y height="250px" :bounce=false :scrollbarY="false" ref="scroller">
+    <scroller  lock-x scrollbar-y height="450px" :bounce=false :scrollbarY="false" ref="scroller">
       <div id="content" class="contentDiv"></div>
     </scroller>
   </div>
@@ -27,6 +26,7 @@
       return {
         title: '',
         result:'',
+        body: ''
       }
     },
     components:{
@@ -36,20 +36,20 @@
     },
     created () {
       console.log(this.$route.query);
-      this.title=this.$route.query.tag;
-      this.getDetail()
+      this.title = this.$route.query.tag;
+      this.getDetail();
     },
     methods:{
       // 获取消息id,根据id到服务端请求详情
       async getDetail() {
-        let data =await getNewsDetail(this.$route.query.id);
+        let data = await getNewsDetail(this.$route.query.id);
         console.log(data);
-        if(data.code>=0){
-          this.result=data.result;
-          this.body=this.result.body;
+        if(data.code >= 0){
+          this.result = data.obj_data;
+          this.body = data.obj_data.body;
           $(".contentDiv").html(this.body);
           //获取div高度，根据该高度设定滑动区域，避免footer位置变化
-          var contentHeight=$(".contentDiv").height()+50;
+          var contentHeight=$(".contentDiv").height() + 50;
           document.getElementById("content").style.height = contentHeight + "px";
           this.$nextTick(() => {
             this.$refs.scroller.reset();
