@@ -14,7 +14,7 @@
     name: 'AppHeader',
     data(){
       return {
-        tag: '资讯',
+        tag: '综合',
         showMenus: false
       }
     },

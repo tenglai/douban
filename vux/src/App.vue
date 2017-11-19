@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- 视图层 -->
     <router-view></router-view>
     <!-- 底部选项卡 -->
     <app-footer></app-footer>
