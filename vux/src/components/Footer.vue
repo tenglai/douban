@@ -11,7 +11,7 @@
       <!-- 动弹 -->
       <tabbar-item :link="{path:'/'}">
         <img slot="icon" src="../assets/img/ic_nav_tweet_normal.png">
-        <img slot="icon" src="../assets/img/ic_nav_tweet_actived.png">
+        <img slot="icon-active" src="../assets/img/ic_nav_tweet_actived.png">
         <span slot="label">动弹</span>
       </tabbar-item>
       <!-- 中间图标 -->
