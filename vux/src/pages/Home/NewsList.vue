@@ -5,7 +5,7 @@
     <swiper :list="imgs" auto style="width:100%;height:120px;margin:0 auto;" dots-class="custom-bottom" dots-position="center"></swiper>
     <!-- 滚动列表 -->
     <div>
-      <scroller lock-x scrollbar-y height="350px" :bounce=false :scrollbarY="false" ref="scroller">
+      <scroller lock-x scrollbar-y :height="height" :bounce=false :scrollbarY="false" ref="scroller">
         <div class="news-wrap-list">
           <cell v-for="x in Objlist" :title="x.title" :link="{path:'/newsDetail',query:{id:x.id,tag:'资讯'}}" :inline-desc="x.body" :key="x.id">
             <img class="ic_img" slot="icon" src="../../assets/img/ic_label_today.png">
@@ -51,10 +51,14 @@
         Objlist:[],
         ishow:false,
         pageIndex:1,
-        catalog:0
+        catalog:0,
+        height: ''
       }
     },
     created(){
+      // 获取屏幕高度
+      this.height = document.documentElement.clientHeight - 46 - 44 - 120 - 53 + 'px';
+      console.log(this.height);
       // 请求列表数据
       this.getList();
     },

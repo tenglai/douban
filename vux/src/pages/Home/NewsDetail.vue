@@ -6,7 +6,7 @@
       <tabbar-item class="search"></tabbar-item>
     </tabbar>
     <h3 class="htitle">{{result.title}}</h3>
-    <scroller  lock-x scrollbar-y height="450px" :bounce=false :scrollbarY="false" ref="scroller">
+    <scroller  lock-x scrollbar-y :height="height" :bounce=false :scrollbarY="false" ref="scroller">
       <div id="content" class="contentDiv"></div>
     </scroller>
   </div>
@@ -26,7 +26,8 @@
       return {
         title: '',
         result:'',
-        body: ''
+        body: '',
+        height: ''
       }
     },
     components:{
@@ -35,6 +36,8 @@
       Scroller
     },
     created () {
+      // 获取屏幕高度
+      this.height = document.documentElement.clientHeight - 50 - 100 - 53 + 'px';
       console.log(this.$route.query);
       this.title = this.$route.query.tag;
       this.getDetail();
@@ -81,5 +84,6 @@
     margin:auto;
     color:black;
     line-height:50px;
+    height: 100px;
   }
 </style>
