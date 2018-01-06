@@ -1,0 +1,16 @@
+{
+  "name": "node_mysql",
+  "version": "1.0.0",
+  "description": "a project for mysql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "mysql": "^2.15.0",
+    "request": "^2.83.0"
+  }
+}
