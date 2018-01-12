@@ -2,7 +2,6 @@
   "pages": [
     "pages/splash/splash",
     "pages/list/list",
-    "pages/item/list",
     "pages/board/board",
     "pages/item/item"
   ],
